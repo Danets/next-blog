@@ -1,9 +1,8 @@
-export async function getFilm(id: number): Promise<Film> {
-  const res = await fetch(`https://swapi.dev/api/films/${id}`);
+export async function getFilm(id: number): Promise<FilmResponse> {
+    return fetch(`https://swapi.tech/api/films/${id}`).then(res => res.json())
+//   if (!res.ok) {
+//     throw new Error("Failed to fetch data");
+//   }
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-
-  return res.json();
+//   return res.json();
 }

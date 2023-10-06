@@ -1,4 +1,5 @@
 import { getFilm } from "@/app/actions/getFilm";
+import { getFilms } from "@/app/actions/getFilms";
 
 interface Params {
   params: {
@@ -11,7 +12,15 @@ export default async function Film({ params: { filmId } }: Params) {
 
   return (
     <div>
-      <h1>{film.title}</h1>
+      <h1>{film.result.properties.title}</h1>
     </div>
   );
 }
+
+// export async function generateStaticParams() {
+//   const films = await getFilms();
+
+//   return films.result.map((film) => ({
+//     filmId: film.uid,
+//   }));
+// }
